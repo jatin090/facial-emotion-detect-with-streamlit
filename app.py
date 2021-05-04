@@ -7,7 +7,7 @@ from tensorflow import keras
 
 
 
-my_model = tf.keras.models.load_model('model.h5')
+my_model = tf.keras.models.load_model('shreyas_scratch_model.h5')
 
 
 def draw_border(img, pt1, pt2, color, thickness, r, d):
