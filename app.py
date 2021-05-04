@@ -7,7 +7,7 @@ from tensorflow import keras
 
 
 
-my_model = tf.keras.models.load_model('model_face_emotions_detection.h5')
+my_model = tf.keras.models.load_model('model.h5')
 
 
 def draw_border(img, pt1, pt2, color, thickness, r, d):
@@ -56,7 +56,7 @@ class VideoTransformer(VideoTransformerBase):
             h = h + 2
             draw_border(img, (x,y),(x+w,y+h),(0,0,204), 2,15, 10)
             img_color_crop = img[y:y+h,x:x+w]
-            final_image = cv2.resize(img_color_crop, (224,224))
+            final_image = cv2.resize(img_color_crop, (48,48))
             final_image = np.expand_dims(final_image, axis = 0)
             final_image = final_image/255.0
             prediction = my_model.predict(final_image)
