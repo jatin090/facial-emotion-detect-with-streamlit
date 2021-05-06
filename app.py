@@ -7,7 +7,7 @@ from tensorflow import keras
 
 
 
-my_model = tf.keras.models.load_model('shreyas_scratch_model.h5')
+my_model = tf.keras.models.load_model('model.h5')
 
 
 def draw_border(img, pt1, pt2, color, thickness, r, d):
@@ -41,7 +41,7 @@ class VideoTransformer(VideoTransformerBase):
         face_detect = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
         #eye_detect = cv2.CascadeClassifier('haarcascade_eye.xml')
         
-        class_labels = ['Angry','Disgust','Fear','Happy','Sad','Surprise','Neutral']
+        class_labels = ['Fear','Angry','Neutral','Happy']
 
 
         img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
